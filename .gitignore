@@ -1,0 +1,10 @@
+node_modules/
+.env
+.env.local
+dist/
+build/
+out/
+cache/
+artifacts/
+*.log
+.claude/settings.local.json
