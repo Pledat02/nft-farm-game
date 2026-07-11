@@ -5,7 +5,7 @@
 ## Stack
 
 - **Framework**: Next.js (App Router), TypeScript
-- **Kết nối ví**: `wagmi` + `viem` trực tiếp, **không dùng RainbowKit** — giảm dependency, MVP chỉ cần 1 nút "Connect" đơn giản (MetaMask/injected connector), không cần UI kit đầy đủ
+- **Kết nối ví**: `wagmi` + `viem` trực tiếp, **không dùng RainbowKit** — giảm dependency. `ConnectButton` liệt kê tất cả ví phát hiện được qua chuẩn **EIP-6963** (multi-injected provider discovery, bật mặc định trong wagmi v2) để người dùng tự chọn đúng ví muốn dùng — quan trọng khi máy cài nhiều ví cùng lúc (MetaMask, Phantom...), tránh xung đột `window.ethereum` giữa các extension
 - **Danh sách NFT của người dùng ("của tôi")**: gọi **backend API** (`GET /inventory/:address`) — `GameNFT.sol` là ERC-721 thường, không có extension `Enumerable`, nên không thể liệt kê token của 1 địa chỉ trực tiếp on-chain mà không lặp toàn bộ tokenId (không khả thi khi supply lớn). Sau khi có danh sách tokenId từ backend, đọc `pendingRewards(tokenId)` **trực tiếp on-chain** qua `wagmi` cho từng token để hiển thị số liệu tức thời (không phụ thuộc độ trễ indexer)
 - **Leaderboard** (dữ liệu tổng hợp nhiều người chơi): gọi **backend API** (`GET /leaderboard`) — phù hợp hơn vì cần query nhiều token cùng lúc, on-chain không làm được hiệu quả
 
