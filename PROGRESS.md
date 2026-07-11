@@ -5,8 +5,9 @@
 ## Đang làm / Tiếp theo
 
 - [x] Chốt game design — xem [docs/game-design.md](docs/game-design.md) + [docs/tokenomics.md](docs/tokenomics.md)
-- [ ] Đang làm: Setup Foundry + viết `contracts/src/GameNFT.sol` (Milestone 2)
+- [x] Setup Foundry + `contracts/src/GameNFT.sol` (mint/claim/pendingRewards), `forge build` OK
+- [ ] Đang làm: viết test `contracts/test/GameNFT.t.sol` (Milestone 3)
 
 ## Cập nhật gần nhất
 
-2026-07-11 — Milestone 1 xong (game design + tokenomics đã chốt mặc định), đang chuyển sang viết contract — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
+2026-07-11 — Milestone 2 xong (GameNFT.sol compile thành công), đang chuyển sang viết test — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
