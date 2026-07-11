@@ -3,10 +3,10 @@
 > File này là bản đồ toàn bộ việc cần làm (backlog). Xem [PROGRESS.md](PROGRESS.md) để biết nhật ký/việc đang dở theo từng phiên.
 
 ## Giai đoạn 0 — Xác định phạm vi
-- [ ] Chốt thể loại gameplay (Idle/Farming đang được cân nhắc)
-- [ ] Chốt vai trò NFT (nhân vật/vật phẩm/đất)
-- [ ] Quyết định có token ERC-20 riêng không
-- [ ] Chốt chain (L2 Ethereum / Solana / khác)
+- [x] Chốt thể loại gameplay — Idle/Farming P2E (quyết định mặc định, xem [docs/game-design.md](docs/game-design.md), có thể đổi)
+- [x] Chốt vai trò NFT — NFT = nhân vật (Farmer), xem docs/game-design.md
+- [x] Quyết định token ERC-20 — chưa làm ở MVP, xem [docs/tokenomics.md](docs/tokenomics.md)
+- [x] Chốt chain — Base Sepolia (testnet), xem docs/game-design.md
 
 ## Giai đoạn 1 — Smart contract
 - [ ] Viết `GameNFT.sol` (ERC-721/1155)

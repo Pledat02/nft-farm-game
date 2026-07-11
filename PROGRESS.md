@@ -4,9 +4,9 @@
 
 ## Đang làm / Tiếp theo
 
-- [ ] Chốt game design (thể loại, vai trò NFT, tokenomics, chain) — đang chờ quyết định
-- Việc kế tiếp sau khi chốt design: viết `contracts/src/GameNFT.sol`
+- [x] Chốt game design — xem [docs/game-design.md](docs/game-design.md) + [docs/tokenomics.md](docs/tokenomics.md)
+- [ ] Đang làm: Setup Foundry + viết `contracts/src/GameNFT.sol` (Milestone 2)
 
 ## Cập nhật gần nhất
 
-2026-07-11 — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
+2026-07-11 — Milestone 1 xong (game design + tokenomics đã chốt mặc định), đang chuyển sang viết contract — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
