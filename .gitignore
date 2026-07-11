@@ -8,3 +8,5 @@ cache/
 artifacts/
 *.log
 .claude/settings.local.json
+*.db
+*.db-journal

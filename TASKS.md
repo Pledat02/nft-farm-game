@@ -18,9 +18,9 @@
 
 ## Giai đoạn 2 — Backend
 - [ ] Setup indexer lắng nghe event on-chain
-- [ ] API auth bằng chữ ký ví (SIWE)
-- [ ] API inventory/leaderboard
-- [ ] Kết nối database
+- [x] API auth bằng chữ ký ví — `/auth/nonce` + `/auth/verify` (viem verifyMessage + JWT), test thủ công OK kể cả signature lỗi (đã fix crash)
+- [x] API inventory/leaderboard — `/inventory/:address`, `/leaderboard`, test thủ công OK
+- [x] Kết nối database — Prisma + SQLite, migration `init` đã chạy, xem [docs/backend-design.md](docs/backend-design.md)
 
 ## Giai đoạn 3 — Frontend/Game client
 - [ ] Kết nối ví (wagmi/RainbowKit)
