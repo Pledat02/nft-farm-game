@@ -23,9 +23,11 @@
 - [x] Kết nối database — Prisma + SQLite, migration `init` đã chạy, xem [docs/backend-design.md](docs/backend-design.md)
 
 ## Giai đoạn 3 — Frontend/Game client
-- [ ] Kết nối ví (wagmi/RainbowKit)
-- [ ] Giao diện game chính
-- [ ] Marketplace mua bán NFT
+- [x] Chốt kỹ thuật + scaffold Next.js — xem [docs/frontend-design.md](docs/frontend-design.md)
+- [x] Kết nối ví (wagmi, không dùng RainbowKit — xem frontend-design.md)
+- [x] Giao diện game chính (mint/claim/danh sách Farmer) — typecheck + eslint sạch, test qua browser: trang chính render đúng
+- [x] Trang leaderboard (đọc backend API) — test qua browser thật: hiển thị đúng dữ liệu Base Sepolia thật (Farmer #0, 34 points). Phát hiện + sửa bug CORS (backend thiếu `cors()` middleware)
+- [ ] Marketplace mua bán NFT — hoãn lại, xem [docs/frontend-design.md](docs/frontend-design.md) (chưa cần ở MVP)
 
 ## Giai đoạn 4 — Hạ tầng & vận hành
 - [ ] Upload metadata/asset lên IPFS

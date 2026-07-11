@@ -10,3 +10,6 @@ artifacts/
 .claude/settings.local.json
 *.db
 *.db-journal
+.next/
+*.tsbuildinfo
+.vercel

@@ -38,6 +38,11 @@ upsert vào SQLite dùng chung với backend qua Prisma.
 - `GET /inventory/:address` — danh sách NFT của 1 địa chỉ (đọc từ cache DB)
 - `GET /leaderboard` — top N theo `resourcePoints`, đọc từ cache DB
 
+## CORS
+
+`cors()` bật cho mọi origin (`*`) — đủ dùng khi backend là API public read-only ở giai đoạn testnet/MVP.
+**Trước khi lên production/mainnet, cần giới hạn lại origin cụ thể** (domain frontend thật) thay vì mở toàn bộ.
+
 ## Ngoài phạm vi MVP
 
 - Matchmaking, session ngoài JWT đơn giản
