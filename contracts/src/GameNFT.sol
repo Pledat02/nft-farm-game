@@ -25,9 +25,9 @@ contract GameNFT is ERC721, Ownable {
     /// @notice Mint a new level-1 Farmer NFT to the caller.
     function mint() external returns (uint256 tokenId) {
         tokenId = _nextTokenId++;
-        _safeMint(msg.sender, tokenId);
         level[tokenId] = 1;
         lastClaimTime[tokenId] = block.timestamp;
+        _safeMint(msg.sender, tokenId);
         emit Minted(msg.sender, tokenId);
     }
 

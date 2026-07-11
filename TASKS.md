@@ -13,7 +13,7 @@
 - [x] Viết `GameNFT.sol` (ERC-721) — mint, claim, pendingRewards; compile thành công
 - [ ] `GameToken.sol` — hoãn lại, xem [docs/tokenomics.md](docs/tokenomics.md) (chưa cần ở MVP)
 - [x] Viết test cho `GameNFT.sol` — 7/7 test pass (`forge test`)
-- [ ] Rà bảo mật (dùng agent `contract-auditor`)
+- [x] Rà bảo mật — sửa 1 vấn đề CEI-ordering trong `mint()`, ghi chú 2 design note (mint không giới hạn, Ownable chưa dùng); test lại 7/7 pass
 - [ ] Deploy testnet (cần người dùng chuẩn bị ví testnet + `.env`)
 
 ## Giai đoạn 2 — Backend
