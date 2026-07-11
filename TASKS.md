@@ -17,7 +17,7 @@
 - [x] Deploy testnet — GameNFT live trên Base Sepolia tại `0x8F2AfEd590CF2C83a08672AFdf341D5c388ebAF6` (chain 84532)
 
 ## Giai đoạn 2 — Backend
-- [ ] Setup indexer lắng nghe event on-chain
+- [x] Setup indexer lắng nghe event on-chain — test end-to-end trên Base Sepolia thật: mint() → indexer sync → API trả đúng; claim() → resourcePoints cập nhật đúng (0 → 34)
 - [x] API auth bằng chữ ký ví — `/auth/nonce` + `/auth/verify` (viem verifyMessage + JWT), test thủ công OK kể cả signature lỗi (đã fix crash)
 - [x] API inventory/leaderboard — `/inventory/:address`, `/leaderboard`, test thủ công OK
 - [x] Kết nối database — Prisma + SQLite, migration `init` đã chạy, xem [docs/backend-design.md](docs/backend-design.md)

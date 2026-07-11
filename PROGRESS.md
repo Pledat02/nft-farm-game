@@ -11,8 +11,9 @@
 - [x] Deploy testnet — GameNFT live trên Base Sepolia, xem [docs/deployments.md](docs/deployments.md)
 - [x] Giai đoạn 1 (Smart contract) hoàn tất, trừ `GameToken.sol` (hoãn theo tokenomics.md)
 - [x] Backend scaffold: Express+TS, Prisma+SQLite, API auth/inventory/leaderboard — xem [docs/backend-design.md](docs/backend-design.md)
-- [ ] Đang làm: indexer lắng nghe event on-chain (`indexer/`) để đổ dữ liệu vào DB cho backend đọc
+- [x] Indexer (`indexer/`) — test end-to-end thật trên Base Sepolia: mint/claim on-chain → indexer sync → API trả đúng dữ liệu
+- [ ] Giai đoạn 2 (Backend) hoàn tất. Tiếp theo: Giai đoạn 3 (Frontend) hoặc việc khác — chờ quyết định
 
 ## Cập nhật gần nhất
 
-2026-07-11 — Backend API (auth/inventory/leaderboard) chạy được, đã test thủ công + fix 1 bug crash khi signature lỗi. Đang viết indexer — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
+2026-07-11 — Indexer hoàn tất, test end-to-end thật trên testnet thành công (mint + claim đều được đồng bộ đúng). Giai đoạn 2 xong hoàn toàn — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)

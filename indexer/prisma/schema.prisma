@@ -1,0 +1,35 @@
+// Bản sao thủ công của backend/prisma/schema.prisma, trỏ cùng 1 file SQLite.
+// Lý do: indexer và backend là 2 package Node riêng (chưa setup npm workspaces),
+// nên chưa share trực tiếp 1 Prisma client. Nếu đổi schema, phải sửa cả 2 nơi.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Player {
+  address   String   @id
+  createdAt DateTime @default(now())
+}
+
+model FarmerNFT {
+  tokenId        Int      @id
+  owner          String
+  level          Int
+  resourcePoints String
+  lastClaimTime  DateTime
+  updatedAt      DateTime @updatedAt
+}
+
+model ClaimEvent {
+  id          Int      @id @default(autoincrement())
+  tokenId     Int
+  amount      String
+  txHash      String   @unique
+  blockNumber String
+  timestamp   DateTime
+}
