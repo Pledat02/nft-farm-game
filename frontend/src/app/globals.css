@@ -1,26 +1,77 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  --background: #faf8f3;
+  --surface: #ffffff;
+  --surface-muted: #f3efe6;
+  --foreground: #1f2417;
+  --foreground-muted: #5b6355;
+  --border: #e4ddcd;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --primary: #3f7d3a;
+  --primary-hover: #346b31;
+  --primary-foreground: #ffffff;
+  --primary-soft: #e7f0e0;
+
+  --accent: #d98e2b;
+  --accent-hover: #c17e23;
+  --accent-foreground: #2c1c05;
+  --accent-soft: #fbecd1;
+
+  --danger: #c0402f;
+  --danger-soft: #fbe6e2;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #14170f;
+    --surface: #1b1f16;
+    --surface-muted: #232819;
+    --foreground: #f1efe4;
+    --foreground-muted: #a5ac97;
+    --border: #313826;
+
+    --primary: #6cbb63;
+    --primary-hover: #7ecb75;
+    --primary-foreground: #0d1a0b;
+    --primary-soft: #223420;
+
+    --accent: #e8ab52;
+    --accent-hover: #f0bb6c;
+    --accent-foreground: #2c1c05;
+    --accent-soft: #3a2c14;
+
+    --danger: #e5695a;
+    --danger-soft: #3a1e19;
   }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-muted: var(--surface-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+  --color-border: var(--border);
+
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-soft: var(--accent-soft);
+
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-baloo);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }

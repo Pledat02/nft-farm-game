@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useAccount, useConnect, useDisconnect } from "wagmi";
+import { ChevronDown, LogOut, Wallet } from "lucide-react";
 
 export function ConnectButton() {
   const { address, isConnected } = useAccount();
@@ -11,15 +12,20 @@ export function ConnectButton() {
 
   if (isConnected && address) {
     return (
-      <div className="flex items-center gap-3">
-        <span className="text-sm font-mono">
-          {address.slice(0, 6)}...{address.slice(-4)}
+      <div className="flex items-center gap-2">
+        <span className="hidden sm:flex items-center gap-1.5 rounded-full bg-primary-soft px-3 py-1.5 text-sm font-medium text-primary">
+          <span className="h-2 w-2 rounded-full bg-primary" aria-hidden />
+          <span className="font-mono tabular-nums">
+            {address.slice(0, 6)}...{address.slice(-4)}
+          </span>
         </span>
         <button
           onClick={() => disconnect()}
-          className="rounded border px-3 py-1 text-sm hover:bg-black/5"
+          aria-label="Ngắt kết nối ví"
+          className="flex items-center gap-1.5 rounded-lg border border-border px-3 py-2 text-sm font-medium text-foreground-muted transition-colors hover:bg-surface-muted hover:text-foreground cursor-pointer"
         >
-          Ngắt kết nối
+          <LogOut size={15} />
+          <span className="hidden sm:inline">Ngắt kết nối</span>
         </button>
       </div>
     );
@@ -27,24 +33,39 @@ export function ConnectButton() {
 
   if (connectors.length === 0) {
     return (
-      <button disabled className="rounded bg-foreground px-4 py-2 text-sm text-background opacity-50">
-        Không tìm thấy ví (cài MetaMask)
+      <button
+        disabled
+        className="flex items-center gap-2 rounded-lg bg-surface-muted px-4 py-2 text-sm font-medium text-foreground-muted opacity-70"
+      >
+        <Wallet size={16} />
+        Không tìm thấy ví
       </button>
     );
   }
 
   return (
     <div className="relative">
+      {menuOpen && (
+        <button
+          aria-label="Đóng menu"
+          className="fixed inset-0 z-10 cursor-default"
+          onClick={() => setMenuOpen(false)}
+        />
+      )}
+
       <button
         onClick={() => setMenuOpen((v) => !v)}
         disabled={isPending}
-        className="rounded bg-foreground px-4 py-2 text-sm text-background disabled:opacity-50"
+        aria-expanded={menuOpen}
+        className="flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-primary-hover disabled:opacity-60 cursor-pointer"
       >
+        <Wallet size={16} />
         {isPending ? `Đang kết nối ${variables?.connector.name ?? ""}...` : "Kết nối ví"}
+        {!isPending && <ChevronDown size={15} className={menuOpen ? "rotate-180 transition-transform" : "transition-transform"} />}
       </button>
 
       {menuOpen && !isPending && (
-        <div className="absolute right-0 mt-1 w-48 rounded border bg-background shadow-lg z-10">
+        <div className="absolute right-0 z-20 mt-2 w-56 overflow-hidden rounded-xl border border-border bg-surface p-1.5 shadow-lg">
           {connectors.map((connector) => (
             <button
               key={connector.uid}
@@ -52,11 +73,15 @@ export function ConnectButton() {
                 connect({ connector });
                 setMenuOpen(false);
               }}
-              className="flex w-full items-center gap-2 px-3 py-2 text-sm text-left hover:bg-black/5"
+              className="flex w-full items-center gap-2.5 rounded-lg px-2.5 py-2 text-sm text-left text-foreground hover:bg-surface-muted cursor-pointer"
             >
-              {connector.icon && (
+              {connector.icon ? (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={connector.icon} alt="" width={18} height={18} />
+                <img src={connector.icon} alt="" width={20} height={20} className="rounded" />
+              ) : (
+                <span className="flex h-5 w-5 items-center justify-center rounded bg-surface-muted text-foreground-muted">
+                  <Wallet size={13} />
+                </span>
               )}
               {connector.name}
             </button>

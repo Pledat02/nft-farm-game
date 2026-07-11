@@ -2,6 +2,13 @@
 
 > Quyết định mặc định do Claude tự chọn, tiếp nối [game-design.md](game-design.md) và [backend-design.md](backend-design.md). Có thể đổi sau.
 
+## Design system
+
+- **Màu**: xanh lá (`primary`, nông trại/tăng trưởng) làm màu hành động chính, vàng hổ phách (`accent`) cho phần thưởng/resource points, nền trung tính ấm (`background`/`surface`), hỗ trợ dark mode qua `prefers-color-scheme`. Token định nghĩa bằng CSS variable trong `globals.css`, map vào Tailwind v4 qua `@theme inline`
+- **Font**: heading dùng **Baloo 2** (bo tròn, thân thiện, hợp game), nội dung/số liệu dùng **Inter** (dễ đọc, tabular numbers cho số liệu)
+- **Icon**: `lucide-react` (SVG), không dùng emoji làm icon
+- **Component dùng chung**: `Header` (logo + nav + ConnectButton, dùng cả 2 trang), card bo góc `rounded-2xl` nhất quán, empty state + skeleton loading cho từng section
+
 ## Stack
 
 - **Framework**: Next.js (App Router), TypeScript
@@ -12,7 +19,7 @@
 ## Cấu trúc
 
 - `frontend/src/app/` — route (App Router): `page.tsx` (trang chính), `leaderboard/page.tsx`
-- `frontend/src/components/` — `ConnectButton`, `FarmerCard`, `MintButton`
+- `frontend/src/components/` — `Header`, `ConnectButton`, `FarmerCard`, `MintButton`
 - `frontend/src/lib/web3.ts` — cấu hình wagmi (chain Base Sepolia, connector injected)
 - `frontend/src/lib/contract.ts` — địa chỉ contract + ABI (import từ `shared/abi/GameNFT.json`)
 - `frontend/src/hooks/` — custom hook nếu cần (vd `useFarmerNFTs`)
