@@ -12,7 +12,7 @@
 - [x] Setup Foundry (`foundry.toml`, `forge-std`, `openzeppelin-contracts`)
 - [x] Viết `GameNFT.sol` (ERC-721) — mint, claim, pendingRewards; compile thành công
 - [ ] `GameToken.sol` — hoãn lại, xem [docs/tokenomics.md](docs/tokenomics.md) (chưa cần ở MVP)
-- [ ] Viết test cho `GameNFT.sol`
+- [x] Viết test cho `GameNFT.sol` — 7/7 test pass (`forge test`)
 - [ ] Rà bảo mật (dùng agent `contract-auditor`)
 - [ ] Deploy testnet (cần người dùng chuẩn bị ví testnet + `.env`)
 

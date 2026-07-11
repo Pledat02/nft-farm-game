@@ -6,8 +6,9 @@
 
 - [x] Chốt game design — xem [docs/game-design.md](docs/game-design.md) + [docs/tokenomics.md](docs/tokenomics.md)
 - [x] Setup Foundry + `contracts/src/GameNFT.sol` (mint/claim/pendingRewards), `forge build` OK
-- [ ] Đang làm: viết test `contracts/test/GameNFT.t.sol` (Milestone 3)
+- [x] Test `contracts/test/GameNFT.t.sol` — 7/7 pass
+- [ ] Đang làm: rà bảo mật bằng agent `contract-auditor` (Milestone 4)
 
 ## Cập nhật gần nhất
 
-2026-07-11 — Milestone 2 xong (GameNFT.sol compile thành công), đang chuyển sang viết test — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
+2026-07-11 — Milestone 3 xong (test pass 7/7), đang rà bảo mật contract — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
