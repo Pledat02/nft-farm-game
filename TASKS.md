@@ -14,7 +14,7 @@
 - [ ] `GameToken.sol` — hoãn lại, xem [docs/tokenomics.md](docs/tokenomics.md) (chưa cần ở MVP)
 - [x] Viết test cho `GameNFT.sol` — 7/7 test pass (`forge test`)
 - [x] Rà bảo mật — sửa 1 vấn đề CEI-ordering trong `mint()`, ghi chú 2 design note (mint không giới hạn, Ownable chưa dùng); test lại 7/7 pass
-- [ ] Deploy testnet (cần người dùng chuẩn bị ví testnet + `.env`)
+- [x] Deploy testnet — GameNFT live trên Base Sepolia tại `0x8F2AfEd590CF2C83a08672AFdf341D5c388ebAF6` (chain 84532)
 
 ## Giai đoạn 2 — Backend
 - [ ] Setup indexer lắng nghe event on-chain

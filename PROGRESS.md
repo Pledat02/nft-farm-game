@@ -8,8 +8,9 @@
 - [x] Setup Foundry + `contracts/src/GameNFT.sol` (mint/claim/pendingRewards), `forge build` OK
 - [x] Test `contracts/test/GameNFT.t.sol` — 7/7 pass
 - [x] Rà bảo mật — sửa CEI-ordering trong `mint()`, test lại 7/7 pass
-- [ ] Tất cả milestone contract (Giai đoạn 1, trừ deploy) đã xong — đang chờ xác nhận có push lên GitHub + bước tiếp theo (deploy testnet cần ví từ người dùng, hoặc chuyển sang Backend)
+- [x] Deploy testnet — GameNFT live trên Base Sepolia, xem [docs/deployments.md](docs/deployments.md)
+- [ ] Giai đoạn 1 (Smart contract) hoàn tất, trừ `GameToken.sol` (hoãn theo tokenomics.md). Tiếp theo: chờ quyết định — Backend (Giai đoạn 2) hay việc khác
 
 ## Cập nhật gần nhất
 
-2026-07-11 — Milestone 4 xong (audit + fix bảo mật), toàn bộ contract MVP đã sẵn sàng local, chưa deploy/chưa push — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
+2026-07-11 — Deploy GameNFT thành công lên Base Sepolia tại `0x8F2AfEd590CF2C83a08672AFdf341D5c388ebAF6` — xem chi tiết tại [docs/progress-log/2026-07-11.md](docs/progress-log/2026-07-11.md)
